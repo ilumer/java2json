@@ -34,7 +34,7 @@ public class Java2JsonAction extends AnAction {
     public static boolean isShowComment = true;
 
     @NonNls
-    private static final Map<String, Object> normalTypes = new HashMap<>();
+    public static final Map<String, Object> normalTypes = new HashMap<>();
 
     static {
         notificationGroup = new NotificationGroup("Java2Json.NotificationGroup", NotificationDisplayType.BALLOON, true);
@@ -46,7 +46,7 @@ public class Java2JsonAction extends AnAction {
         normalTypes.put("Long", 0L);
         normalTypes.put("Float", 0.0F);
         normalTypes.put("Double", 0.0D);
-        normalTypes.put("String", "");
+        normalTypes.put("String", "test");
         normalTypes.put("BigDecimal", 0.0);
         normalTypes.put("Date", df.format(new Date()));
         normalTypes.put("Timestamp", System.currentTimeMillis());
@@ -56,7 +56,7 @@ public class Java2JsonAction extends AnAction {
 
     }
 
-    private static boolean isNormalType(String typeName) {
+    public static boolean isNormalType(String typeName) {
         return normalTypes.containsKey(typeName);
     }
 

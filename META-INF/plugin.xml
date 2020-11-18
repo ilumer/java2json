@@ -2,7 +2,7 @@
     <id>com.linsage</id>
     <name>Java Bean to Json</name>
     <version>1.0.6</version>
-    <vendor email="linsage@live.com" url="https://github.com/linsage"> linsage</vendor>
+    <vendor email="linsage@live.com" url="https://github.com/linsage">linsage</vendor>
     <depends>com.intellij.modules.lang</depends>
     <description><![CDATA[
       <a href="https://github.com/linsage/java2json">GitHub</a> |
@@ -27,7 +27,7 @@
     <depends>com.intellij.modules.lang</depends>
     <depends>com.intellij.modules.java</depends>
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="173.0"/>
+    <idea-version since-build="182.2371.4"/>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
@@ -44,11 +44,16 @@
                 description="Java Bean Convert to Json">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </action>
+        <action id="generateUrl" class="com.linsage.GenerateUrlAction" text="GenerateUrlForGet"
+                description="生成spring url参数">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="com.linsage.Java2JsonAction"/>
+        </action>
 
         <group id="Java2JsonMenu" text="Java2Json" popup="true">
             <add-to-group group-id="ToolsMenu" anchor="last"/>
-            <action class="com.linsage.menu.ToggleCommentAction" id="menu_comment" text="Toggle Comment" icon="AllIcons.Actions.Checked"  />
-            <action class="com.linsage.menu.SponsorAction" id="menu_sponsor" text="Sponsor me" />
+            <action class="com.linsage.menu.ToggleCommentAction" id="menu_comment" text="Toggle Comment"
+                    icon="AllIcons.Actions.Checked"/>
+            <action class="com.linsage.menu.SponsorAction" id="menu_sponsor" text="Sponsor me"/>
         </group>
     </actions>
 
